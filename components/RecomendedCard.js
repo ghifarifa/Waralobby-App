@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 1,
     borderColor: '#000',
-    padding: 12
+    padding: 12,
+    maxWidth: 230
   },
   container: {
     marginRight: 20

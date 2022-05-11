@@ -30,7 +30,8 @@ const HistoryCard = () => {
 const styles = StyleSheet.create({
   flexbox: {
     borderWidth: 1,
-    borderRadius: 14
+    borderRadius: 14,
+    maxWidth: 320
   },
   flex1: {
     padding: 10

@@ -18,11 +18,12 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 0.5,
     flexDirection: 'row',
-    width: 300,
+    maxWidth: 300,
     height: 90,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 14
+    borderRadius: 14,
+    padding: 10
   },
   img: {
     width: 50,
