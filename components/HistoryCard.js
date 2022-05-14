@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
-
+import { Ionicons } from '@expo/vector-icons'
 const HistoryCard = () => {
   return (
     <View style={styles.flexbox}>
@@ -8,10 +8,15 @@ const HistoryCard = () => {
           <View style={styles.img}></View>
           <View>
             <Text style={styles.txt}>Sabana Fried Chicken</Text>
-            <Text>Jakarta</Text>
+            <View style={styles.location}>
+              <Ionicons name="location-outline" size={20} color="black" />
+              <Text>Jakarta</Text>
+            </View>
             <Text style={styles.status}>Offer Sent</Text>
           </View>
-          <Text style={styles.cat}>Fast Food</Text>
+          <View style={styles.catCon}>
+            <Text style={styles.cat}>Fast Food</Text>
+          </View>
         </View>
       </View>
       <View style={styles.flex2}>
@@ -29,9 +34,11 @@ const HistoryCard = () => {
 }
 const styles = StyleSheet.create({
   flexbox: {
-    borderWidth: 1,
-    borderRadius: 14,
-    maxWidth: 320
+    borderWidth: 0.1,
+    borderRadius: 3,
+    maxWidth: 340,
+    minWidth: 340,
+    backgroundColor: '#f5f5fa'
   },
   flex1: {
     padding: 10
@@ -42,30 +49,34 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 14
+    // justifyContent: 'center',
+    borderRadius: 14,
+    marginStart: 0
   },
   img: {
     width: 50,
     height: 50,
     borderWidth: 1,
-    marginRight: 10,
+    marginRight: 20,
     borderRadius: 13
   },
   txt: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: 10
+  },
+  catCon: {
+    width: 106
   },
   cat: {
     borderWidth: 1,
     textAlign: 'center',
     fontSize: 9,
     borderRadius: 100,
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-end',
     backgroundColor: '#5CA5FC',
     color: '#fff',
-    padding: 3,
-    marginTop: 20,
-    marginLeft: 20
+    paddingHorizontal: 8,
+    marginEnd: 10
   },
   status: {
     borderWidth: 1,
@@ -88,6 +99,9 @@ const styles = StyleSheet.create({
   buttonTxt: {
     color: '#5CA5FC',
     fontWeight: 'bold'
+  },
+  location: {
+    flexDirection: 'row'
   }
 })
 

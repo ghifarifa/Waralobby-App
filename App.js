@@ -3,14 +3,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import RecomendedCard from './components/RecomendedCard'
 import FrancisorCard from './components/FranchisorCard'
 import HistoryCard from './components/HistoryCard'
+import History from './pages/History'
 export default function App() {
   return (
     <View style={styles.container}>
-      <RecomendedCard />
-      <FrancisorCard />
-      <HistoryCard />
-      {/* <Text>Hello World</Text>
-      <StatusBar style="auto" /> */}
+      <History />
     </View>
   )
 }
@@ -18,8 +15,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: '#fff'
   }
 })
