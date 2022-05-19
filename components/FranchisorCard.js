@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 0.5,
     flexDirection: 'row',
-    maxWidth: 300,
     height: 90,
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderWidth: 1,
-    marginRight: 10,
+    marginRight: 21,
     borderRadius: 13
   },
   txt: {
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     padding: 3,
     marginTop: 20,
-    marginLeft: 20
+    marginLeft: 70
   }
 })
 

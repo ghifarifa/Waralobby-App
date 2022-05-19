@@ -5,12 +5,15 @@ import FrancisorCard from './components/FranchisorCard'
 import HistoryCard from './components/HistoryCard'
 import History from './pages/History'
 import Navbar from './components/Navbar'
+import MainPage from './pages/MainPage'
 export default function App() {
   return (
-    <View style={styles.container}>
-      <History />
-      <Navbar />
-    </View>
+    <MainPage />
+    // <View style={styles.container}>
+    //   {/* <History /> */}
+    //   {/* <Navbar /> */}
+    //   <MainPage />
+    // </View>
   )
 }
 

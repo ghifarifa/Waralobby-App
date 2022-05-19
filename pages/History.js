@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import HistoryCard from '../components/HistoryCard'
 const generateHistory = () => {
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 28,
     marginTop: 70,
-    marginBottom: 10
+    marginBottom: 10,
+    marginStart: 20
   },
   container: {
     alignItems: 'center'
