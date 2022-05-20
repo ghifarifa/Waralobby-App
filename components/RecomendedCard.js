@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
-
+import { Ionicons } from '@expo/vector-icons'
 const RecomendedCard = () => {
   return (
     <View style={styles.card}>
       <View style={styles.container}>
         <View style={styles.logo}></View>
         <Text style={styles.head}>Kopi Kenangan</Text>
-        <Text style={styles.txt}>Bandung</Text>
+        <View style={styles.loc}>
+          <Ionicons name="location-outline" size={20} color="black" />
+          <Text style={styles.txt}>Bandung</Text>
+        </View>
         <Text style={styles.txt}>Rp 20.000.000</Text>
       </View>
       <View style={styles.atr}>
@@ -80,6 +83,10 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     color: '#fff',
     padding: 3
+  },
+  loc: {
+    alignItems: 'center',
+    flexDirection: 'row'
   }
 })
 
