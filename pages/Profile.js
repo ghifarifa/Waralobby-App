@@ -1,9 +1,16 @@
 import * as React from 'react'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import ProfileHeader from '../components/ProfileHeader'
+import ProfilePicture from '../components/ProfilePicture'
+import ProfileBody from '../components/ProfileBody'
 const Profile = () => {
   return (
     <ScrollView>
       <Text style={styles.h1}>Profile</Text>
+      <View style={styles.header}>
+        <ProfileHeader />
+        <ProfileBody />
+      </View>
     </ScrollView>
   )
 }
@@ -12,14 +19,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 28,
     marginTop: 70,
-    marginBottom: 10
+    marginBottom: 10,
+    marginStart: 20
   },
-  container: {
-    alignItems: 'center'
-  },
-  asd: {
-    margin: 120,
-    backgroundColor: '#000'
+  header: {
+    alignSelf: 'center'
   }
 })
 
