@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 import RecomendedCard from './components/RecomendedCard'
@@ -6,8 +7,7 @@ import HistoryCard from './components/HistoryCard'
 import History from './pages/History'
 import Navbar from './components/Navbar'
 import MainPage from './pages/MainPage'
-import DetailFranchise from './pages/DetailFranchise';
-import RequestForm from './pages/RequestForm'
+import { db, auth } from './firebase/config'
 export default function App() {
   return (
     <DetailFranchise />
