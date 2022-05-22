@@ -6,9 +6,11 @@ import HistoryCard from './components/HistoryCard'
 import History from './pages/History'
 import Navbar from './components/Navbar'
 import MainPage from './pages/MainPage'
+import DetailFranchise from './pages/DetailFranchise';
+import RequestForm from './pages/RequestForm'
 export default function App() {
   return (
-    <MainPage />
+    <DetailFranchise />
     // <View style={styles.container}>
     //   {/* <History /> */}
     //   {/* <Navbar /> */}
