@@ -7,14 +7,12 @@ import HistoryCard from './components/HistoryCard'
 import History from './pages/History'
 import Navbar from './components/Navbar'
 import MainPage from './pages/MainPage'
-import { db, auth } from './firebase/config'
 export default function App() {
   return (
-    <DetailFranchise />
     // <View style={styles.container}>
     //   {/* <History /> */}
     //   {/* <Navbar /> */}
-    //   <MainPage />
+    <MainPage />
     // </View>
   )
 }

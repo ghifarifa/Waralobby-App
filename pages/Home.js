@@ -16,8 +16,6 @@ const Home = () => {
     })
   }, [])
   const generateFranchisor = () => {
-    console.log('panjang', franchise.length)
-
     let views = []
     franchise.forEach((dat) => {
       views.push(
@@ -26,12 +24,32 @@ const Home = () => {
             name={dat.name}
             location={dat.location}
             category={dat.category}
+            uri={dat.uri}
           />
         </View>
       )
     })
 
     return <View style={styles.container}>{views}</View>
+  }
+
+  const generateRecomendation = () => {
+    let views = []
+    franchise.forEach((dat) => {
+      views.push(
+        <View style={{ marginRight: 8 }}>
+          <RecomendedCard
+            name={dat.name}
+            location={dat.location}
+            category={dat.category}
+            uri={dat.uri}
+            price={dat.price}
+          />
+        </View>
+      )
+    })
+
+    return views
   }
   return (
     <ScrollView>
@@ -40,18 +58,7 @@ const Home = () => {
       <Text style={styles.border}>Recomended for you</Text>
       <View style={styles.recomendedContainer}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={{ marginRight: 8 }}>
-            <RecomendedCard />
-          </View>
-          <View style={{ marginRight: 8 }}>
-            <RecomendedCard />
-          </View>
-          <View style={{ marginRight: 8 }}>
-            <RecomendedCard />
-          </View>
-          <View style={{ marginRight: 8 }}>
-            <RecomendedCard />
-          </View>
+          {generateRecomendation()}
         </ScrollView>
       </View>
 

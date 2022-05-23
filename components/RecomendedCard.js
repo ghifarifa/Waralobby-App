@@ -1,16 +1,33 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-const RecomendedCard = () => {
+import 'intl'
+
+import 'intl/locale-data/jsonp/id'
+const currencyFormater = (int) => {
+  let formatter = Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR'
+  })
+  return formatter.format(int)
+}
+const RecomendedCard = (props) => {
   return (
     <View style={styles.card}>
       <View style={styles.container}>
-        <View style={styles.logo}></View>
-        <Text style={styles.head}>Kopi Kenangan</Text>
+        <View style={styles.logo}>
+          <Image
+            style={styles.logo2}
+            source={{
+              uri: props.uri
+            }}
+          ></Image>
+        </View>
+        <Text style={styles.head}>{props.name}</Text>
         <View style={styles.loc}>
           <Ionicons name="location-outline" size={20} color="black" />
-          <Text style={styles.txt}>Bandung</Text>
+          <Text style={styles.txt}>{props.location}</Text>
         </View>
-        <Text style={styles.txt}>Rp 20.000.000</Text>
+        <Text style={styles.txt}>{currencyFormater(props.price)}</Text>
       </View>
       <View style={styles.atr}>
         <Text style={styles.cat}>Coffee</Text>
@@ -39,10 +56,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#000',
     padding: 12,
-    maxWidth: 230
+    maxWidth: 250
   },
   container: {
-    marginRight: 20
+    width: 160
   },
   head: {
     fontWeight: 'bold',
@@ -52,9 +69,17 @@ const styles = StyleSheet.create({
     fontSize: 11
   },
   logo: {
+    width: 42,
+    height: 42,
+    borderWidth: 1,
+    borderColor: '#000',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white'
+  },
+  logo2: {
     width: 40,
     height: 40,
-    borderWidth: 1,
     borderColor: '#000'
   },
   atr: {

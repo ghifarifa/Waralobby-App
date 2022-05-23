@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
 const FrancisorCard = (props) => {
   return (
     <View>
       <View style={styles.container}>
-        <View style={styles.img}></View>
+        <View style={styles.img}>
+          <Image
+            style={styles.img2}
+            source={{
+              uri: props.uri
+            }}
+          ></Image>
+        </View>
         <View>
           <Text style={styles.txt}>{props.name}</Text>
           <Text>{props.location}</Text>
@@ -25,11 +32,19 @@ const styles = StyleSheet.create({
     padding: 10
   },
   img: {
+    width: 51,
+    height: 51,
+    borderWidth: 0.5,
+    marginRight: 21,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white'
+  },
+  img2: {
     width: 50,
     height: 50,
-    borderWidth: 1,
-    marginRight: 21,
-    borderRadius: 13
+    borderRadius: 14
   },
   txt: {
     fontWeight: 'bold',
