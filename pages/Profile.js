@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import ProfileHeader from '../components/ProfileHeader'
 import ProfilePicture from '../components/ProfilePicture'
 import ProfileBody from '../components/ProfileBody'
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <ScrollView>
       <Text style={styles.h1}>Profile</Text>

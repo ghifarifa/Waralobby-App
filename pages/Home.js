@@ -4,7 +4,7 @@ import FrancisorCard from '../components/FranchisorCard'
 import RecomendedCard from '../components/RecomendedCard'
 import { db, auth } from '../firebase/config'
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [franchise, setFranchise] = useState([])
   useEffect(() => {
     db.collection('franchise').onSnapshot((docs) => {
@@ -21,10 +21,12 @@ const Home = () => {
       views.push(
         <View style={{ marginBottom: 10 }}>
           <FrancisorCard
+            key={'fran' + dat.name.replace(/\s/g, '')}
             name={dat.name}
             location={dat.location}
             category={dat.category}
             uri={dat.uri}
+            navigation={navigation}
           />
         </View>
       )
@@ -39,11 +41,13 @@ const Home = () => {
       views.push(
         <View style={{ marginRight: 8 }}>
           <RecomendedCard
+            key={dat.name.replace(/\s/g, '')}
             name={dat.name}
             location={dat.location}
             category={dat.category}
             uri={dat.uri}
             price={dat.price}
+            navigation={navigation}
           />
         </View>
       )

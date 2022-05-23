@@ -7,12 +7,14 @@ import HistoryCard from './components/HistoryCard'
 import History from './pages/History'
 import Navbar from './components/Navbar'
 import MainPage from './pages/MainPage'
+import HomeStackScreen from './pages/HomeNav'
 export default function App() {
   return (
     // <View style={styles.container}>
     //   {/* <History /> */}
     //   {/* <Navbar /> */}
     <MainPage />
+    // <HomeStackScreen />
     // </View>
   )
 }
