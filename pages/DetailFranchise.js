@@ -37,8 +37,8 @@ const DetailFranchise = ({ route, navigation }) => {
             </View>
             <Text style={{ marginTop: 5, marginBottom: 5 }}>Summary</Text>
             <Text style={{ textAlign: 'left', fontSize: 12, maxHeight: 134 }}>
-              Kopi Kenangan is a company engaged in the field of coffee drinks
-              that also enliven the contemporary coffee market in Indonesia.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec metus sem. Duis ut turpis metus.
             </Text>
             <View style={styles.location}>
               <Image
@@ -109,16 +109,12 @@ const DetailFranchise = ({ route, navigation }) => {
           <Text style={{ fontSize: 20, fontWeight: '500' }}>Overview</Text>
           <View>
             <Text>
-              Kopi Kenangan was founded by Edward Tirtanata, James Prananto and
-              Cynthia Chaerunnisa in 2017. His first shop was in the Kuningan
-              area. On the first day of the opening of Kopi Kenangan, the shop
-              managed to sell only 700 cups of coffee. Two years later, Kopi
-              Kenangan has opened more than 230 shops throughout Indonesia. In
-              2018, Kopi Kenangan received funding from Alpha JWC of Rp121
-              billion. In 2019, Kopi Kenangan received another injection of IDR
-              288 billion, this time from the venture capital of Sequoia India.
-              With that much funding, Kopi Kenangan targets to have 1,000
-              outlets by 2021.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec metus sem. Duis ut turpis metus. Quisque dolor ante, ultricies
+              eget ultrices eu, ornare at lacus. Fusce sit amet tempor metus.
+              Pellentesque interdum tincidunt elit hendrerit posuere.
+              Pellentesque dignissim tristique quam, ut lobortis ipsum finibus
+              vitae. Aenean eget odio vel neque gravida scelerisque.
             </Text>
           </View>
         </View>

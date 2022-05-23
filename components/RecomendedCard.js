@@ -40,13 +40,13 @@ const RecomendedCard = ({ navigation, ...props }) => {
         <Text style={styles.txt}>{currencyFormater(props.price)}</Text>
       </View>
       <View style={styles.atr}>
-        <Text style={styles.cat}>Coffee</Text>
+        <Text style={styles.cat}>{props.category}</Text>
         <Pressable
           style={({ pressed }) => [
             { backgroundColor: pressed ? '#4A94E8' : '#5CA5FC' },
             styles.button
           ]}
-          onPress={() => navigation.navigate('RequestForm')}
+          onPress={() => navigation.navigate('RequestForm', { ...props })}
         >
           <Text style={styles.buttonTxt}>Offer Franchise</Text>
         </Pressable>

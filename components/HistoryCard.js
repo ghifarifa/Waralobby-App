@@ -1,25 +1,100 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Image, Linking } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-const HistoryCard = () => {
+const HistoryCard = (props) => {
+  const followUpButton = () => {
+    if (
+      props.status != 'Offer Sent' &&
+      props.status != 'Unsuitable' &&
+      props.status != 'Success'
+    ) {
+      return (
+        <View style={styles.flex2}>
+          <Pressable
+            style={({ pressed }) => [
+              { backgroundColor: pressed ? '#D4EAFF' : '#fff' },
+              styles.button
+            ]}
+            onPress={() => {
+              Linking.openURL(
+                'https://wa.me/628112340163?text=Hello%2C%20I%20already%20submitted%20my%20application%20for%20franchise%20offering%20with%20your%20product.%20Can%20I%20get%20any%20update%20or%20further%20information%20about%20it%3F%20Thanks.'
+              )
+            }}
+          >
+            <Text style={styles.buttonTxt}>FOLLOW UP</Text>
+          </Pressable>
+        </View>
+      )
+    }
+  }
+
+  const statusColor = () => {
+    if (props.status == 'Offer Sent') {
+      return (
+        <Text style={{ backgroundColor: '#C4C4C4', ...styles.status }}>
+          {props.status}
+        </Text>
+      )
+    }
+    if (props.status == 'Reviewed') {
+      return (
+        <Text style={{ backgroundColor: '#F5A623', ...styles.status }}>
+          {props.status}
+        </Text>
+      )
+    }
+    if (props.status == 'Success') {
+      return (
+        <Text style={{ backgroundColor: '#23C3F5', ...styles.status }}>
+          {props.status}
+        </Text>
+      )
+    }
+    if (props.status == 'Unsuitable') {
+      return (
+        <Text style={{ backgroundColor: '#F52323', ...styles.status }}>
+          {props.status}
+        </Text>
+      )
+    }
+    if (props.status == 'Payment') {
+      return (
+        <Text style={{ backgroundColor: '#D8F523', ...styles.status }}>
+          {props.status}
+        </Text>
+      )
+    }
+  }
+
   return (
     <View style={styles.flexbox}>
       <View style={styles.flex1}>
         <View style={styles.container}>
-          <View style={styles.img}></View>
+          <View style={styles.img}>
+            <Image
+              style={styles.img2}
+              source={{
+                uri: props.uri
+              }}
+            ></Image>
+          </View>
           <View>
-            <Text style={styles.txt}>Sabana Fried Chicken</Text>
+            <Text style={styles.txt}>{props.name}</Text>
             <View style={styles.location}>
               <Ionicons name="location-outline" size={20} color="black" />
-              <Text>Jakarta</Text>
+              <Text>{props.location}</Text>
             </View>
-            <Text style={styles.status}>Offer Sent</Text>
+            {statusColor()}
+            {/* <Text style={{ backgroundColor: 'red', ...styles.status }}>
+              {props.status}
+            </Text> */}
           </View>
           <View style={styles.catCon}>
-            <Text style={styles.cat}>Fast Food</Text>
+            <Text style={styles.cat}>{props.category}</Text>
           </View>
         </View>
       </View>
-      <View style={styles.flex2}>
+      {followUpButton()}
+      {/* <View style={styles.flex2}>
         <Pressable
           style={({ pressed }) => [
             { backgroundColor: pressed ? '#D4EAFF' : '#fff' },
@@ -28,7 +103,7 @@ const HistoryCard = () => {
         >
           <Text style={styles.buttonTxt}>FOLLOW UP</Text>
         </Pressable>
-      </View>
+      </View> */}
     </View>
   )
 }
@@ -54,15 +129,24 @@ const styles = StyleSheet.create({
     marginStart: 0
   },
   img: {
-    width: 50,
-    height: 50,
+    width: 52,
+    height: 52,
     borderWidth: 1,
     marginRight: 20,
+    borderRadius: 13,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  img2: {
+    width: 50,
+    height: 50,
     borderRadius: 13
   },
   txt: {
     fontWeight: 'bold',
-    marginTop: 10
+    marginTop: 10,
+    // borderWidth: 1,
+    width: 170
   },
   catCon: {
     width: 106
@@ -76,7 +160,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#5CA5FC',
     color: '#fff',
     paddingHorizontal: 8,
-    marginEnd: 10
+    marginEnd: 30
   },
   status: {
     borderWidth: 1,
@@ -85,7 +169,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     borderRadius: 100,
     alignSelf: 'flex-start',
-    backgroundColor: '#C4C4C4',
+
     color: '#000',
     paddingHorizontal: 8,
     marginTop: 10

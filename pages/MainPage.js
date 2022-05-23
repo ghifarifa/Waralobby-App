@@ -15,7 +15,6 @@ const historyName = 'History'
 const profileName = 'Profile'
 
 const Tab = createBottomTabNavigator()
-const Stack = createNativeStackNavigator()
 
 function MainPage() {
   return (

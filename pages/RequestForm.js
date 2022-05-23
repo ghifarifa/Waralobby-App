@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Pressable,
+  Alert,
   StyleSheet,
   Text,
   Image,
@@ -10,12 +10,29 @@ import {
   ScrollView
 } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
+import { db, auth } from '../firebase/config'
 
 const RequestForm = ({ navigation, route }) => {
   console.log(route.params)
   const [number, onChangeNumber] = React.useState(null)
   const [loc, onChangeLoc] = React.useState(null)
   const [selectedImage, setSelectedImage] = React.useState(null)
+
+  const postData = () => {
+    db.collection('history')
+      .add({
+        ...route.params,
+        status: 'Offer Sent'
+      })
+      .then(
+        Alert.alert(
+          'Success',
+          'Your franchise aplication successfully submited!'
+        ),
+        [{ text: 'Okay', onPress: () => navigation.navigate('HistoryPage') }]
+      )
+  }
+
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync()
 
@@ -84,6 +101,11 @@ const RequestForm = ({ navigation, route }) => {
           height: 40,
           marginLeft: 265,
           justifyContent: 'center'
+        }}
+        navigation={navigation}
+        onPress={() => {
+          postData()
+          navigation.navigate('HistoryPage')
         }}
       >
         <Text style={{ fontSize: 12, textAlign: 'center', color: 'white' }}>
