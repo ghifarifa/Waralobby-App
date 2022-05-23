@@ -2,18 +2,20 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 // Screens
 import History from './History'
 import Home from './Home'
 import Profile from './Profile'
-
+import HomeStackScreen from './HomeNav'
 //Screen names
 const homeName = 'Home'
 const historyName = 'History'
 const profileName = 'Profile'
 
 const Tab = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 function MainPage() {
   return (
@@ -51,7 +53,7 @@ function MainPage() {
           style: { padding: 10, height: 70 }
         }}
       >
-        <Tab.Screen name={homeName} component={Home} />
+        <Tab.Screen name={homeName} component={HomeStackScreen} />
         <Tab.Screen name={historyName} component={History} />
         <Tab.Screen name={profileName} component={Profile} />
       </Tab.Navigator>

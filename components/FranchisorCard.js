@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
-const FrancisorCard = (props) => {
+const FrancisorCard = ({ navigation, ...props }) => {
   return (
-    <View>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('DetailFranchise', { ...props })}
+    >
       <View style={styles.container}>
         <View style={styles.img}>
           <Image
@@ -18,7 +20,7 @@ const FrancisorCard = (props) => {
         </View>
         <Text style={styles.cat}>{props.category}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 const styles = StyleSheet.create({

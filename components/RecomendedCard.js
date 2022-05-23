@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  TouchableOpacity
+} from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import 'intl'
 
@@ -10,9 +17,12 @@ const currencyFormater = (int) => {
   })
   return formatter.format(int)
 }
-const RecomendedCard = (props) => {
+const RecomendedCard = ({ navigation, ...props }) => {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate('DetailFranchise', { ...props })}
+    >
       <View style={styles.container}>
         <View style={styles.logo}>
           <Image
@@ -36,11 +46,12 @@ const RecomendedCard = (props) => {
             { backgroundColor: pressed ? '#4A94E8' : '#5CA5FC' },
             styles.button
           ]}
+          onPress={() => navigation.navigate('RequestForm')}
         >
           <Text style={styles.buttonTxt}>Offer Franchise</Text>
         </Pressable>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
