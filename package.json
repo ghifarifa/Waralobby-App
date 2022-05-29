@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "demo": "expo start --no-dev --minify"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.3.1",

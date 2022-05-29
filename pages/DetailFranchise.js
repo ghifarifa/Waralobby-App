@@ -6,12 +6,22 @@ import {
   View,
   TouchableOpacity
 } from 'react-native'
-
+import 'intl/locale-data/jsonp/id'
+const currencyFormater = (int) => {
+  let formatter = Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR'
+  })
+  return formatter.format(int)
+}
 const DetailFranchise = ({ route, navigation }) => {
   const payload = route.params
   const data = [
-    { key: 'Minimum Cash Required', value: 'Rp 1.000.000' },
-    { key: 'Total Investment', value: 'Rp 1.000.000 - Rp 0' },
+    {
+      key: 'Minimum Cash Required',
+      value: currencyFormater(route.params.price)
+    },
+    { key: 'Total Investment', value: currencyFormater(route.params.price) },
     { key: 'Year Founded', value: '2017' }
   ]
   return (
@@ -45,7 +55,7 @@ const DetailFranchise = ({ route, navigation }) => {
                 source={require('../assets/location.png')}
                 style={styles.locationLogo}
               />
-              <Text>Bandung</Text>
+              <Text>{route.params.location}</Text>
             </View>
           </View>
           <View style={styles.franchiseBox2}>
@@ -60,7 +70,7 @@ const DetailFranchise = ({ route, navigation }) => {
               <Text
                 style={{ fontSize: 12, textAlign: 'center', color: 'white' }}
               >
-                Coffee
+                {route.params.category}
               </Text>
             </View>
             <View style={styles.priceBox}>

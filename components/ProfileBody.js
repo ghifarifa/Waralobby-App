@@ -21,7 +21,7 @@ const ProfileBody = () => {
       </View>
       <View style={styles.gender}>
         <Text style={{ fontWeight: 'bold', fontSize: 16, marginBottom: 10 }}>
-          Gender
+          Location
         </Text>
         <Text
           style={{
@@ -31,7 +31,7 @@ const ProfileBody = () => {
             marginBottom: 5
           }}
         >
-          Male
+          Bandung
         </Text>
       </View>
       <View style={styles.career}>

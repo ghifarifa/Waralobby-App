@@ -26,6 +26,7 @@ const Home = ({ navigation }) => {
             location={dat.location}
             category={dat.category}
             uri={dat.uri}
+            price={dat.price}
             navigation={navigation}
           />
         </View>
@@ -38,19 +39,21 @@ const Home = ({ navigation }) => {
   const generateRecomendation = () => {
     let views = []
     franchise.forEach((dat) => {
-      views.push(
-        <View style={{ marginRight: 8 }}>
-          <RecomendedCard
-            key={dat.name.replace(/\s/g, '')}
-            name={dat.name}
-            location={dat.location}
-            category={dat.category}
-            uri={dat.uri}
-            price={dat.price}
-            navigation={navigation}
-          />
-        </View>
-      )
+      if (dat.location == 'Bandung' || dat.location == 'Cimahi') {
+        views.push(
+          <View style={{ marginRight: 8 }}>
+            <RecomendedCard
+              key={dat.name.replace(/\s/g, '')}
+              name={dat.name}
+              location={dat.location}
+              category={dat.category}
+              uri={dat.uri}
+              price={dat.price}
+              navigation={navigation}
+            />
+          </View>
+        )
+      }
     })
 
     return views

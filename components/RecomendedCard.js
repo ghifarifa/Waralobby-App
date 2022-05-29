@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
   },
   head: {
     fontWeight: 'bold',
-    fontSize: 14
+    fontSize: 14,
+    width: 170
   },
   txt: {
     fontSize: 11

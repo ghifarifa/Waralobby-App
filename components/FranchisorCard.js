@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
 const FrancisorCard = ({ navigation, ...props }) => {
+  let data = { ...props }
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('DetailFranchise', { ...props })}
+      onPress={() => navigation.navigate('DetailFranchise', { ...data })}
     >
       <View style={styles.container}>
         <View style={styles.img}>
